@@ -3,4 +3,4 @@ cd ~/SuperNET/iguana
 git checkout dev
 git pull
 ./m_mm
-cp marketmaker ~/mm/
+cp marketmaker ~/BOB_scripts/vps_scripts
