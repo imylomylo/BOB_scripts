@@ -1,5 +1,5 @@
-# LP_scripts
-Scripts for funding and managing LP's
+# Bob_scripts
+Scripts for funding and managing bobs.
 The best way to do this is to have your marketmaker on a VPS and SSH tunnel to it like so: 
 
 `nc -z localhost 7783 || ssh -f -N -L 7783:localhost:7783 user@vps; echo 'tunnel open'`
@@ -35,8 +35,8 @@ This script is very handy to fund bobs. make the Pairs (X) and (X)x1.2. The reas
 
 I suggest using UTXO pairs with an X value of 1, 10, 100, 1000 10,000 etc... Someone else might have better sizings since things have now chainged a bit since I made these.
 
-./fundLP COIN ADDRESS 'number of UTXO pairs' UTXO-1 UTXO-2
+./fundBob COIN ADDRESS 'number of UTXO pairs' UTXO-1 UTXO-2
 
 Example
 
-`./fundLP KMD RX8SinRsb1n9CMX68D8eQuuZLLqAJqU9Q9 50 10 12`
+`./fundBob KMD RX8SinRsb1n9CMX68D8eQuuZLLqAJqU9Q9 50 10 12`
