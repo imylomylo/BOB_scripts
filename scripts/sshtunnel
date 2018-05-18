@@ -1,0 +1,2 @@
+#!/bin/bash
+nc -z localhost 6650 || ssh -f -N -L 6650:localhost:7783 electrumx@45.77.254.232; echo 'tunnel open'

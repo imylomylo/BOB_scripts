@@ -1,0 +1,3 @@
+source userpass
+curl --url "http://127.0.0.1:6650" --data "{\"userpass\":\"$userpass\",\"method\":\"autoprice\",\"base\":\"SNG\",\"rel\":\"KMD\",\"fixed\":$1,\"margin\":0.01}"
+
