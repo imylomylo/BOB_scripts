@@ -31,7 +31,7 @@ Example:
 -------------------------------------------------
 ### Funding address's:
 
-This script is very handy to fund bobs. make the Pairs (X) and (X)x1.2. The reason for not funding the x1.2 hard coded in, is so you can also fund alice with this for buying huge amounts of a coin, for a dICO etc.
+This script is very handy to fund bobs. make the Pairs (X) and (X)x1.2. The reason for not funding the x1.2 hard coded in, is so you can also fund alice with this for buying huge amounts of a coin, for a dICO etc. I found it best to have an address with the main funds you then fund all the bobs with. Just login to you makretmaker with another passprase and change userpass.
 
 I suggest using UTXO pairs with an X value of 1, 10, 100, 1000 10,000 etc... Someone else might have better sizings since things have now chainged a bit since I made these.
 
