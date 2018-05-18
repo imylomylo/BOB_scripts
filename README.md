@@ -16,6 +16,7 @@ mm_port = '6650'
 
 ### Userpass
 `userpass` must be set in the bash environment you run these scripts from. 
+
 `export userpass=userpassofyouraccount`
 
 ### Set Auto Price-- Highest priced coin goes first
