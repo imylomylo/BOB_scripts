@@ -1,9 +1,10 @@
 # LP_scripts
 Scripts for funding and managing LP's
 The best way to do this is to have your marketmaker on a VPS and SSH tunnel to it like so: 
+`nc -z localhost 7783 || ssh -f -N -L 7783:localhost:7783 user@vps; echo 'tunnel open'`
+This first checks if a tunnel is already open  if not it will open it. 
 
-
-You need to set the parameters at the top of each script to point it at your marketmaker rpc port.
+You need to set the parameters at the top of each script to point it at your marketmaker rpc port for the above SSH command it is 7783.
 ```
 # config area
 mm_ip = '127.0.0.1'
@@ -11,7 +12,12 @@ mm_port = '6650'
 # end of config area
 ```
 
-### set auto price-- Highest priced coin goes first
+### Userpass
+`userpass` must be set in the bash environment you run these scripts from. 
+`export userpass=userpassofyouraccount`
+
+### Set Auto Price-- Highest priced coin goes first
+This script sets a pair of coins based on their price in BTC, I think someone can use an exchange API to pull the coins price in realtime every X minutes/hours to stop large arbs being possible due to price flutuations.
 
 ./autoscript KMD KMD_PRICE SNG SNG_PRICE SPREAD
 
