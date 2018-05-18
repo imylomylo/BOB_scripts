@@ -1,6 +1,7 @@
 sudo apt-get update
 sudo apt-get install git libcurl4-openssl-dev build-essential libnanomsg-dev cmake screen
 
+cd ~
 git clone https://github.com/nanomsg/nanomsg.git
 cd nanomsg
 mkdir build
