@@ -1,2 +1,2 @@
 #!/bin/bash
-nc -z localhost 6650 || ssh -f -N -L 6650:localhost:7783 marketmaker@207.148.76.33; echo 'tunnel open'
+nc -z localhost 6650 || ssh -f -N -L 6650:localhost:7783 marketmaker@207.148.76.33; echo 'tunnel open' & echo $!

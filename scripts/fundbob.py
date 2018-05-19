@@ -8,7 +8,7 @@ import random
 
 # config area
 mm_ip = '127.0.0.1'
-mm_port = '6650'
+mm_port = '7783'
 # end of config area
 
 #Define marketmaker URL

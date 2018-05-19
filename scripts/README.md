@@ -14,19 +14,15 @@ mm_port = '6650'
 # end of config area
 ```
 
-### Userpass
-`userpass` must be set in the bash environment you run these scripts from. 
-
-`export userpass=userpassofyouraccount`
 
 ### Set Auto Price-- Highest priced coin goes first
 This script sets a pair of coins based on their price in BTC, I think someone can use an exchange API to pull the coins price in realtime every X minutes/hours to stop large arbs being possible due to price flutuations.
 
-./autoscript COIN1 COIN1_PRICE COIN2 COIN2_PRICE SPREAD
+source userpass;./autoscript COIN1 COIN1_PRICE COIN2 COIN2_PRICE SPREAD
 
 Example:
 
-`./auto_price.py KMD 40000 SNG 2450 0.05`
+`source userpass;./auto_price.py KMD 40000 SNG 2450 0.05`
 
 -------------------------------------------------
 ### Funding address's:
@@ -35,8 +31,8 @@ This script is very handy to fund bobs. make the Pairs (X) and (X)x1.2. The reas
 
 I suggest using UTXO pairs with an X value of 1, 10, 100, 1000 10,000 etc... Someone else might have better sizings since things have now chainged a bit since I made these.
 
-./fundBob COIN ADDRESS 'number of UTXO pairs' UTXO-1 UTXO-2
+source userpass;./fundBob COIN ADDRESS 'number of UTXO pairs' UTXO-1 UTXO-2
 
 Example
 
-`./fundBob KMD RX8SinRsb1n9CMX68D8eQuuZLLqAJqU9Q9 50 10 12`
+`source userpass;./fundBob KMD RX8SinRsb1n9CMX68D8eQuuZLLqAJqU9Q9 50 10 12`
