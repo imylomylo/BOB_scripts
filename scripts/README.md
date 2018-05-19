@@ -1,24 +1,20 @@
 # Bob_scripts
 Scripts for funding and managing bobs.
-The best way to do this is to have your marketmaker on a VPS and SSH tunnel to it like so: 
+This repo is designed to manage a number of bobs that do the same thing. BarterDEX works much better is there are lots of bobs. For this you need native coind's.
 
-`nc -z localhost 7783 || ssh -f -N -L 7783:localhost:7783 user@vps; echo 'tunnel open'`
+To use the python scripts here you need to set the config area at the top of each script. By default the Price script is set for VPS marketmaker and the Fund script is set for your local marketmaker.
 
-This first checks if a tunnel is already open if not it will open it. 
-
-You need to set the parameters at the top of each script to point it at your marketmaker rpc port for the above SSH command it is 7783.
 ```
 # config area
 mm_ip = '127.0.0.1'
-mm_port = '6650'
+mm_port = '7783'
 # end of config area
 ```
 
-
 ### Set Auto Price-- Highest priced coin goes first
-This script sets a pair of coins based on their price in BTC, I think someone can use an exchange API to pull the coins price in realtime every X minutes/hours to stop large arbs being possible due to price flutuations.
+This script sets a pair of coins based on their price in BTC, I think someone can use an exchange API to pull the coins price in realtime every X minutes/hours to stop large arbs being possible due to price flutuations. This is for coins not listed on CMC. For that you can use autoprice API. There are some examples in the dexscripts folder.
 
-source userpass;./autoscript COIN1 COIN1_PRICE COIN2 COIN2_PRICE SPREAD
+`source userpass;./autoprice.py COIN1 COIN1_PRICE COIN2 COIN2_PRICE SPREAD`
 
 Example:
 
@@ -27,12 +23,12 @@ Example:
 -------------------------------------------------
 ### Funding address's:
 
-This script is very handy to fund bobs. make the Pairs (X) and (X)x1.2. The reason for not funding the x1.2 hard coded in, is so you can also fund alice with this for buying huge amounts of a coin, for a dICO etc. I found it best to have an address with the main funds you then fund all the bobs with. Just login to you makretmaker with another passprase and change userpass.
+This script is very handy to fund bobs. make the Pairs (X) and (X)x1.2. The reason for not funding the x1.2 hard coded in, is so you can also fund alice with this for buying huge amounts of a coin, for a dICO etc. I found it best to have an address with the main funds you then fund all the bobs with. I use my local marketmaker with just electrum to fund without any issues. This is why its config area is using port 7783.
 
-I suggest using UTXO pairs with an X value of 1, 10, 100, 1000 10,000 etc... Someone else might have better sizings since things have now chainged a bit since I made these.
+Fund large UTXO's as the change from each purchase will last longer before becoming dust and slowing down your bob.
 
-source userpass;./fundBob COIN ADDRESS 'number of UTXO pairs' UTXO-1 UTXO-2
+`source userpass;./fundbob.py COIN ADDRESS 'number of UTXO pairs' UTXO-1 UTXO-2`
 
 Example
 
-`source userpass;./fundBob KMD RX8SinRsb1n9CMX68D8eQuuZLLqAJqU9Q9 50 10 12`
+`source userpass;./fundbob.py KMD RX8SinRsb1n9CMX68D8eQuuZLLqAJqU9Q9 50 10 12`
