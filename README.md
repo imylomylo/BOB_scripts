@@ -20,7 +20,7 @@ This part of the guide will need updating. We should make a simple GUI for manag
 3) `cd BOB_scripts/scripts`
 4) edit the passprase file, its an array of passphrases for all your bobs.
 5) edit the IP file, each line here matches the line of the passprases file.`
-7) `./login.sh X` where X is the number of your VPS starting at 1.
+7) `./login X` where X is the number of your VPS starting at 1.
 8) when you are finished working in this VPS `./logout`
 
 ## Setting up your VPS
