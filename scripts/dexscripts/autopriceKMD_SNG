@@ -1,0 +1,3 @@
+source ../userpass
+curl -s --url "http://127.0.0.1:6650" --data "{\"userpass\":\"$userpass\",\"method\":\"autoprice\",\"base\":\"BEER\",\"rel\":\"PIZZA\",\"fixed\":1,\"margin\":0.05}"
+
