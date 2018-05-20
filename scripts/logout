@@ -1,0 +1,4 @@
+#!/bin/bash
+source SSHPID
+kill $PID
+rm userpass SSHPID

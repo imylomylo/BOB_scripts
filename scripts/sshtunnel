@@ -1,4 +1,4 @@
 #!/bin/bash
 ssh -Cfo ExitOnForwardFailure=yes -NL 6650:localhost:7783 $1
 PID=$(pgrep -f 'NL 6650:')
-echo PID=$PID >  SSHPID
+echo PID=$PID > SSHPID
