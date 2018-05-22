@@ -8,19 +8,19 @@ import random
 
 # config area
 mm_ip = '127.0.0.1'
-mm_port = '7783'
+mm_port = '6650'
 # end of config area
 
 #Define marketmaker URL
 mm_url = 'http://' + mm_ip + ':' + mm_port
 
-#read the userpass 
+#read the userpass
 try:
 	userpass = os.environ['userpass']
 except:
 	print("Error: userpass is not defined")
 	sys.exit(0)
-	
+
 # configure pretty printer
 pp = pprint.PrettyPrinter(width=41, compact=True)
 
@@ -32,8 +32,8 @@ def post_rpc(url,payload):
     except Exception as e:
         print("Couldn't connect to " + url, e)
         sys.exit(0)
-    
-#Define function to create outputs array    
+
+#Define function to create outputs array
 def create_outputs(address,amount,low,high):
 	outputs = []
 	for i in range(amount):
@@ -41,7 +41,7 @@ def create_outputs(address,amount,low,high):
 		outputs.append(new_output)
 		new_output = {address : high}
 		outputs.append(new_output)
-	return(outputs) 
+	return(outputs)
 
 #Get command line inputs
 i_coin = str(sys.argv[1])
