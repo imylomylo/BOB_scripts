@@ -18,8 +18,8 @@ This part of the guide will need updating. We should make a simple GUI for manag
 1) install git
 2) `git clone https://github.com/blackjok3rtt/BOB_scripts.git`
 3) `cd BOB_scripts/scripts`
-4) edit the passprase file, its an array of passphrases for all your bobs.
-5) edit the IP file, each line here matches the line of the passprases file.`
+4) First `cp passphrase_sample passphrase` then edit the passprase file, its an array of passphrases for all your bobs.
+5) First `cp IP_sample IP` then edit the IP file, each line here matches the line of the passprases file.`
 7) `./login X` where X is the number of your VPS starting at 1.
 8) when you are finished working in this VPS `./logout`
 
