@@ -2,3 +2,4 @@
 source SSHPID
 kill $PID
 rm userpass SSHPID
+echo "Logged Out"
